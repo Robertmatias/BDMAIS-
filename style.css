@@ -197,7 +197,7 @@ button {
 
     inset: 0;
 
-    background-image: url("/IMG/FOTO1.jpeg");
+    background-image: url("./IMG/FOTO1.jpeg");
 
     background-size: cover;
 
@@ -216,25 +216,14 @@ button {
 
 .hero-overlay {
     position: absolute;
-
     inset: 0;
-
+    background: linear-gradient(
+        90deg,
+        rgba(0, 70, 35, 0.65),
+        rgba(0, 70, 35, 0.30),
+        rgba(0, 70, 35, 0.10)
+    );
     z-index: 1;
-
-    background:
-        linear-gradient(
-            90deg,
-
-            rgba(0,65,34,.99) 0%,
-
-            rgba(0,83,42,.95) 30%,
-
-            rgba(0,92,47,.82) 48%,
-
-            rgba(0,92,47,.48) 66%,
-
-            rgba(0,80,40,.08) 100%
-        );
 }
 
 
@@ -530,20 +519,13 @@ button {
 
 .about-photo {
     min-height: 460px;
-
     border-radius: 25px;
-
     overflow: hidden;
-
     position: relative;
 
     background:
-        linear-gradient(
-            rgba(0,70,35,.45),
-            rgba(0,70,35,.75)
-        ),
-        url("img/hero-bg.jpg")
-        center/cover;
+        linear-gradient(rgba(0,70,35,.20), rgba(0,70,35,.35)),
+        url("./IMG/FOTO2.jpeg") center/cover;
 }
 
 .about-photo-content {
@@ -1036,16 +1018,15 @@ footer {
     }
 
 
-    .hero-overlay {
-        background:
-            linear-gradient(
-                90deg,
-                rgba(0,62,32,.98) 0%,
-                rgba(0,75,38,.92) 50%,
-                rgba(0,75,38,.55) 100%
-            );
-    }
-
+.hero-overlay {
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,62,32,.70) 0%,
+            rgba(0,75,38,.35) 50%,
+            rgba(0,75,38,.10) 100%
+        );
+}
 
     .hero-content {
         width: 100%;
