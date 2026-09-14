@@ -1,15 +1,15 @@
-// ==============================
+// ======================================
 // MENU MOBILE
-// ==============================
+// ======================================
 
-const menuButton = document.getElementById("menuButton");
+const menuBtn = document.getElementById("menuBtn");
 const nav = document.getElementById("nav");
 
-menuButton.addEventListener("click", () => {
+menuBtn.addEventListener("click", function () {
 
     nav.classList.toggle("active");
 
-    const icon = menuButton.querySelector("i");
+    const icon = menuBtn.querySelector("i");
 
     if (nav.classList.contains("active")) {
 
@@ -26,19 +26,17 @@ menuButton.addEventListener("click", () => {
 });
 
 
-// ==============================
+// ======================================
 // FECHAR MENU AO CLICAR
-// ==============================
+// ======================================
 
-const navLinks = document.querySelectorAll(".nav a");
+document.querySelectorAll(".nav a").forEach(function (link) {
 
-navLinks.forEach(link => {
-
-    link.addEventListener("click", () => {
+    link.addEventListener("click", function () {
 
         nav.classList.remove("active");
 
-        const icon = menuButton.querySelector("i");
+        const icon = menuBtn.querySelector("i");
 
         icon.classList.remove("fa-xmark");
         icon.classList.add("fa-bars");
@@ -48,40 +46,46 @@ navLinks.forEach(link => {
 });
 
 
-// ==============================
+// ======================================
 // HEADER AO ROLAR
-// ==============================
+// ======================================
 
-const header = document.getElementById("header");
+window.addEventListener("scroll", function () {
 
-window.addEventListener("scroll", () => {
+    const header = document.querySelector(".header");
 
     if (window.scrollY > 50) {
 
-        header.classList.add("scrolled");
+        header.style.boxShadow =
+            "0 5px 25px rgba(0,0,0,.10)";
 
     } else {
 
-        header.classList.remove("scrolled");
+        header.style.boxShadow =
+            "0 2px 20px rgba(0,0,0,.04)";
 
     }
 
 });
 
 
-// ==============================
-// ANIMAÇÃO DOS ELEMENTOS
-// ==============================
+// ======================================
+// ANIMAÇÃO DOS CARDS
+// ======================================
+
+const cards = document.querySelectorAll(
+    ".service-card, .differential"
+);
 
 const observer = new IntersectionObserver(
 
-    (entries) => {
+    function (entries) {
 
-        entries.forEach(entry => {
+        entries.forEach(function (entry) {
 
             if (entry.isIntersecting) {
 
-                entry.target.classList.add("show");
+                entry.target.classList.add("visible");
 
             }
 
@@ -96,14 +100,10 @@ const observer = new IntersectionObserver(
 );
 
 
-document
-    .querySelectorAll(
-        ".service-card, .differential, .about-content, .about-image"
-    )
-    .forEach(element => {
+cards.forEach(function (card) {
 
-        element.classList.add("hidden");
+    card.classList.add("animate");
 
-        observer.observe(element);
+    observer.observe(card);
 
-    });
+});
