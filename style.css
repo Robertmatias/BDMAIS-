@@ -525,7 +525,7 @@ button {
 
     background:
         linear-gradient(rgba(0,70,35,.20), rgba(0,70,35,.35)),
-        url("./IMG/FOTO2.jpeg") center/cover;
+        url("./IMG/foto2.jpeg") center/cover;
 }
 
 .about-photo-content {
